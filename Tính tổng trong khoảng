@@ -1,0 +1,47 @@
+#include<iostream>
+#include<iomanip>
+#include<vector>
+using namespace std;
+void Nhap(vector<long long>& a,long long n)
+{
+    for (long long i = 0; i < n; i++)
+    {
+        long long x;
+        cin >> x;
+        a.push_back(x);
+    }
+}
+
+void KQ(vector<long long>&a,long long L,long long R)
+{
+    long long tong = 0;
+    for (long long i = L; i <= R; i++)
+    {
+        tong = tong + a[i];
+    }cout << tong << endl;
+
+
+}
+int main() {
+    
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        vector<long long>a;
+        long long n,Q;
+            cin >> n>>Q;
+        Nhap(a,n);
+        for (long long i = 1; i <= Q; i++)
+        {
+            long long L, R;
+            cin >> L >> R;
+            L--;
+            R--;
+                KQ(a,L,R);
+        }
+ 
+    }
+    system("pause");
+    return 0;
+}
