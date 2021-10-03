@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+#include<vector>
+typedef long long ll;
+#include<cmath>
+void Nhap(vector<ll>& a, ll n) {
+	for (ll i = 0; i < n; i++) {
+		ll x;
+		cin >> x; 
+		a.push_back(x);
+	}
+}
+ll KQ(vector<ll>a,vector<ll>b) {
+	ll sum = 0, t = 0;
+	for (ll i = 0; i < a.size(); i++) {
+		t += a[i];
+		ll k = 0;
+		for (ll j = i + 1; j < b.size(); j++) {
+			k += b[j];
+		}
+		if (k + t > sum) {
+			sum = k + t;
+		}
+	}return sum;
+}
+int main() {
+	int t;
+	cin >> t;
+	while (t--) {
+		vector<ll>a;
+		vector<ll>b;
+		ll n,m; cin >> n>>m;
+		Nhap(a, n);
+		Nhap(b, m);
+		ll max = KQ(a, b) > KQ(b, a) ? KQ(a, b) : KQ(b, a);
+		cout << max;
+		cout << endl;
+	}
+	system("pause");
+	return 0;
+}
