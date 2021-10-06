@@ -26,7 +26,7 @@ int  Xu_li(set<long long>a) {
 			return start;
 		}
 		start = *i + 1;
-	}return start;
+	}return start;//
 
 }
 int main() {
