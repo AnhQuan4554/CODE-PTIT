@@ -12,8 +12,8 @@ ll Uoc(ll x, ll y) {
 class PhanSo
 {
 public:
-	friend ostream& operator<<(ostream& os, PhanSo x);
-	friend istream& operator>>(istream& is, PhanSo& x);
+	friend ostream& operator<<(ostream& , PhanSo );
+	friend istream& operator>>(istream& , PhanSo& );//trong public ko có biến
 	friend PhanSo operator + (PhanSo, PhanSo);
 	PhanSo(ll, ll);
 	~PhanSo();
