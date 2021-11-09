@@ -32,7 +32,7 @@ int main() {
         long long n,Q;
             cin >> n>>Q;
         Nhap(a,n);
-        for (long long i = 1; i <= Q; i++)
+        for (long long i = 1; i <= Q; i++)//
         {
             long long L, R;
             cin >> L >> R;
