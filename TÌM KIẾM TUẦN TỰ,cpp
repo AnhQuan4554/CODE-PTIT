@@ -1,0 +1,38 @@
+﻿#include<iostream>
+using namespace std;
+#include<cmath>
+#include<vector>
+int kt(long long a) {
+	for (long long i = 2; i < sqrt(a); i++) {//khac kt nguyen to 
+		if (a % i == 0)return 0;
+		/*vi neu chia het cho so nho hon can tuc laf nhieu hon
+		3 uoc (vi mac dinh 3 uoc la 1 can so do vaf chinh no)*/
+	}return 1;
+}
+int main() {
+	int t;
+	
+	cin >> t;
+	while (t--) {
+		long long n,so;
+		cin >> n>>so;
+		int kt = 0;
+		vector<long long>a;
+		//nhap cac so
+		for (long long i = 0; i < n; i++) {
+			long long x;
+			cin >> x;
+			if (x == so) {
+				kt = 1;
+				a.push_back(i + 1);
+			}
+		}
+		if (kt == 1) {
+			cout << a[0];
+		}
+		else  {
+			cout << "-1";
+		}
+		cout << endl;
+	}
+}
