@@ -21,6 +21,8 @@ public:
         }
     }
     friend istream& operator >>(istream& in, SinhVien& x) {
+         x.ma = dem;
+        dem++;//moi lan nhap la tăng biến đếm tức mã sv
         cin.ignore();
         getline(in, x.ten);
         getline(in, x.lop);
@@ -34,10 +36,7 @@ public:
         //sua ten
         x.Fix_Hoten(x.ten);
         //tang ma dem
-        x.ma = dem;
-        dem++;/*phai tang trong nay neu khong theo nhuw ham main 
-              no moi lan nhap la bien dem tang do do sau khi nhap xong 10 nguoi
-              thi bien dem =10 roi con cong gi nua*/
+       
         if (x.ma < 10)cout << "B20DCCN00" << x.ma<<" ";
         else cout << "B20DCCN0" << x.ma<<" ";
 
