@@ -16,7 +16,7 @@ void handle(int a[], int n,int &kt) {
 	}
 	if (temp <= 0)kt = 0;
 	int x = n;
-	while (a[temp] > a[x]) {
+	while (a[temp] > a[x]) {// cứ lấy vd 1234 là rõ nhất 
 		x--;
 	}
 	swap(a[temp], a[x]);
