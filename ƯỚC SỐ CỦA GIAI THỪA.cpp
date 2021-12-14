@@ -15,7 +15,7 @@ int main() {
 		int N, p;
 		cin >> N >> p;
 		int count = 0;
-		for (int i = p; i <= N; i += p) {
+		for (int i = p; i <= N; i += p) {//9! thì chạy tu so 3 6 9 xet nhung phan tu chia het cho 3 thoi 
 			int x = i;
 			while (x % p == 0)
 			{
