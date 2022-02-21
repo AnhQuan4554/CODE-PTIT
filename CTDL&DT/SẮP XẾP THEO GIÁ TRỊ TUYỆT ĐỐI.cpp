@@ -1,36 +1,28 @@
-
-#include<iostream>
+﻿#include<iostream>
 using namespace std;
-#include<cmath>
+#include<set>
 #include<vector>
-#include<algorithm>
+#include<map>
+#include<set>
+#include<cmath>
 
-void input(vector<pair<int, int>>&a,vector<int>&b, int n,int num) {
+void input(multimap<int, int>& a, int n,int k ) {
 	for (int i = 0; i < n; i++) {
 		int x; cin >> x;
-		b.push_back(x);
-		a[i].first = abs(num - x);
-		a[i].second = i;
+		a.insert({ abs(x - k),x });
 	}
 }
-
-
 int main() {
 	int t; cin >> t;
-	while (t--) {
-		int n,num; cin >> n;
-		cin >> num;
-		vector<pair<int, int>>a(n);
-		vector<int>b;
-		input(a,b, n,num);
-		sort(a.begin(), a.end());
-		for (int i = 0; i < a.size();i++) {
-			cout << b[a[i].second ]<<" ";
-		}
 	
-		
-		cout << endl;
+	while (t--) {
+		int n, k; cin >> n >> k;
+		multimap<int, int>a;
+		input(a, n, k);
+		for (auto i : a) {
+			cout  << i.second << " ";
+		}cout << endl;
 	}
-	system("pause");
-	return 0;
+	
+
 }
