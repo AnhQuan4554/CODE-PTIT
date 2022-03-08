@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 using namespace std;
 #include<vector>
 int check = 1;
@@ -41,9 +41,12 @@ int main() {
 		while (check) {
 			if (check2(a, b, k) == 0) {
 				count++;
-				handle(a, n, k);
+				
 			}
-			else break;
+			else {
+				break;
+			}
+			handle(a, n, k);
 			
 		}cout << count+1 << endl;// lần cuối cùng bằng nhau
 		check = 1;
