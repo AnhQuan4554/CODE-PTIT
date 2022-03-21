@@ -1,0 +1,52 @@
+﻿#include<iostream>
+using namespace std;
+#include<algorithm>
+#include<vector>
+typedef long long ll;
+ll n;
+ll* a;
+vector<ll>b;
+ll cnt = 0;
+ll SUM;
+void Try(ll i ) {
+
+	for (int j = 0; j <= 1; j++) {
+		a[i] = j;
+		if (i == n-1) {
+			ll sum = 0;
+
+			for (int i = 0; i < n; i++) {
+				//cout << a[i] << " ";
+				if (a[i]) { //neu a[i]=1 tuc duocj chon
+					sum += b[i];
+				}
+			}//cout << sum << endl;
+			if (sum == SUM) {
+				cnt++;
+
+				for (int i = 0; i < n; i++) {
+					if (a[i])cout << b[i] << " ";
+				}
+				cout << endl;
+			}
+		}
+		else { Try(i + 1); }
+	}
+
+}
+
+int main() {
+	cin >> n; cin >> SUM;
+	 a = new ll[n+2];
+	 for (int i = 0; i < n; i++) {
+		 ll x; cin >> x;
+		 b.push_back(x);
+	}
+
+	Try(0);
+	cout << cnt;
+
+	
+	system("pause");
+	return 0;
+}
