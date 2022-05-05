@@ -1,0 +1,28 @@
+﻿#include<iostream>
+#include<vector>
+#include<string>
+#include<stdlib.h>
+#include<sstream>
+using namespace std;
+int main() {
+	
+		vector<pair<int,int>>a;
+		int n; cin >> n; 
+		cin.ignore();
+		for (int i = 1; i <= n; i++) {
+			string s, num;
+			getline(cin, s);
+			stringstream ss(s);
+			while (ss >> num) {
+				if (stoi(num) > i) {
+					a.push_back({i,stoi(num) });
+				}
+			}
+		}
+		for (auto i : a) {
+			cout << i.first << " " << i.second << endl;
+		}
+	
+	system("pause");
+	return 0;
+}
